@@ -1,0 +1,29 @@
+---
+exportVersion: "1"
+exportId: "8a5ef5fb72b6b1740172cdb4e34c0ab12"
+name: "casRunScript-js (www.kaloferov.com)"
+runtime: "nodejs"
+entrypoint: "handler"
+description: "CAS - Run Scripts Using SSH or PS"
+inputs:
+  psPassIn: "<Optional>"
+  psUserIn: "<Required>"
+  sshPassIn: "<Optional>"
+  sshUserIn: "<Required>"
+  cmdHostABXIn: "<Optional>"
+  actionOptionSshAuthIn: "<Required>"
+  cmdDefaultShellTypeIn: "<Required>"
+  cmdActionPreOneDelayIn: 1
+  cmdActionPostOneDelayIn: 1
+  cmdActionPreOneScriptIn: "<Optional>"
+  cmdActionPostOneScriptIn: "<Optional>"
+  actionOptionAllowBlueprintScriptsIn: "false"
+timeoutSeconds: 180
+deploymentTimeoutSeconds: 900
+dependencies: "{\n  \"dependencies\": {\n    \"simple-ssh\": \"1.0.0\", \n    \"nodejs-winrm\"\
+  : \"1.1.2\"\n  }\n}"
+actionType: "SCRIPT"
+provider: "on-prem"
+configuration:
+  const_azure-system_managed_identity: false
+memoryInMB: 300
